@@ -5,10 +5,10 @@ import matplotlib.pyplot as plt
 def Ep1():
     data = pd.read_csv('transactions.csv')
     max_money = data[data.STATUS == 'OK'].nlargest(3, ['SUM'])
-    print("Три наибольшие транзакции на счета Umbrella Inc:")
+    print("РўСЂРё РЅР°РёР±РѕР»СЊС€РёРµ С‚СЂР°РЅР·Р°РєС†РёРё РЅР° СЃС‡РµС‚Р° Umbrella Inc:")
     print(max_money)
     Umbrella = data[(data.STATUS == 'OK') & (data.CONTRACTOR == 'Umbrella, Inc')]
-    print("На счета Umbrella Inc за все время было переведено:", Umbrella.SUM.sum(), "USD.")
+    print("РќР° СЃС‡РµС‚Р° Umbrella Inc Р·Р° РІСЃРµ РІСЂРµРјСЏ Р±С‹Р»Рѕ РїРµСЂРµРІРµРґРµРЅРѕ:", Umbrella.SUM.sum(), "USD.")
     
 def Ep2():
     data = pd.read_csv('flights.csv')
@@ -22,9 +22,9 @@ def Ep2():
         PRICE.append(data[data.CARGO == i].PRICE.sum())
         WEIGHT.append(data[data.CARGO == i].WEIGHT.sum())
         
-    print("Данные по авиакомпаниям:")
+    print("Р”Р°РЅРЅС‹Рµ РїРѕ Р°РІРёР°РєРѕРјРїР°РЅРёСЏРј:")
     for i in range(len(companies)):
-        print(f"{companies[i]}. Рейсов: {AMOUNT[i]}, полная стоимость: {PRICE[i]}, полная масса грузов: {WEIGHT[i]}.")
+        print(f"{companies[i]}. Р РµР№СЃРѕРІ: {AMOUNT[i]}, РїРѕР»РЅР°СЏ СЃС‚РѕРёРјРѕСЃС‚СЊ: {PRICE[i]}, РїРѕР»РЅР°СЏ РјР°СЃСЃР° РіСЂСѓР·РѕРІ: {WEIGHT[i]}.")
         
     axs[0].pie(AMOUNT, labels = companies)
     axs[0].set_title("Number of flights")
@@ -75,9 +75,9 @@ def Ep3():
     axs[1].set_title('Powerful students in out groups')
     fig.savefig('Powerful_students.pdf')
     
-    print("Студенты, решения которых прошли больше одного теста в заданиях G и H, состояли в факультетских группах: ", end = '')
+    print("РЎС‚СѓРґРµРЅС‚С‹, СЂРµС€РµРЅРёСЏ РєРѕС‚РѕСЂС‹С… РїСЂРѕС€Р»Рё Р±РѕР»СЊС€Рµ РѕРґРЅРѕРіРѕ С‚РµСЃС‚Р° РІ Р·Р°РґР°РЅРёСЏС… G Рё H, СЃРѕСЃС‚РѕСЏР»Рё РІ С„Р°РєСѓР»СЊС‚РµС‚СЃРєРёС… РіСЂСѓРїРїР°С…: ", end = '')
     print(*lucky_group_faculty, sep = ', ', end = '\n')
-    print('Они были распределены в группы: ', end = '')
+    print('РћРЅРё Р±С‹Р»Рё СЂР°СЃРїСЂРµРґРµР»РµРЅС‹ РІ РіСЂСѓРїРїС‹: ', end = '')
     print(*lucky_group_out, sep = ', ')
  
  
